@@ -1,0 +1,114 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0d0d2b, #121233);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Containers */
+.auth-container, .dashboard-container {
+    background: rgba(26, 26, 64, 0.6); /* Glass effect */
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 140, 255, 0.4);
+    width: 400px;
+    max-width: 90%;
+    margin: auto;
+    margin-top: 80px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.auth-container:hover, .dashboard-container:hover {
+    transform: scale(1.03);
+}
+
+/* Input Fields */
+.auth-container input {
+    width: 94%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(35, 35, 77, 0.8);
+    color: white;
+    transition: 0.3s;
+    outline: none;
+}
+
+.auth-container input:focus {
+    border: 1px solid #008cff;
+    box-shadow: 0px 0px 8px rgba(0, 140, 255, 0.8);
+}
+
+/* Buttons */
+.auth-container button, 
+.dashboard-container button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #008cff, #4a00e0);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 12px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.auth-container button:hover, 
+.dashboard-container button:hover {
+    background: linear-gradient(135deg, #4a00e0, #6200ea);
+    transform: scale(1.07);
+}
+
+/* Logout Button */
+#logout-btn {
+    background: linear-gradient(135deg, #ff1744, #d50000);
+}
+
+#logout-btn:hover {
+    background: linear-gradient(135deg, #d50000, #ff5252);
+    transform: scale(1.07);
+}
+
+/* Room Buttons */
+.room-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    background: rgba(35, 35, 77, 0.7);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.room-btn:hover {
+    background: linear-gradient(135deg, #008cff, #4a00e0);
+    transform: scale(1.05);
+}
+
+/* Message Text */
+#message {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #ff5252;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .auth-container, .dashboard-container {
+        width: 90%;
+        padding: 20px;
+    }
+}

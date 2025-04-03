@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Flutter App Development Tools</title>
+    <link rel="stylesheet" href="css.css">
+    <script type="module" src="auth.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #00e676;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1e1e1e;
+            width: 260px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 255, 128, 0.3);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+            background: #222;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .card h2 {
+            color: #00e676;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        .card a {
+            display: block;
+            margin-top: 10px;
+            padding: 8px;
+            background: #00e676;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            background: #00c853;
+        }
+
+        #logout-btn {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            background: #ff3d00;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #logout-btn:hover {
+            background: #ff6e40;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Latest Flutter App Development Tools</h1>
+
+    <div class="container" id="tech-container">
+        <!-- Tools will be dynamically added here -->
+    </div>
+
+    <button id="logout-btn">Logout</button>
+
+    <script>
+        // Check if user is logged in
+        if (!localStorage.getItem("user")) {
+            window.location.href = "index.html"; // Redirect if not logged in
+        }
+
+        const flutterTools = [
+    { name: "Flutter SDK", description: "The official framework for building cross-platform apps.", image: "https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png", link: "https://flutter.dev/" },
+    { name: "Dart DevTools", description: "A set of debugging and performance tools for Dart and Flutter.", image: "https://dart.dev/assets/shared/dart/icon/64.png", link: "https://dart.dev/tools/dart-devtools" },
+    { name: "Android Studio", description: "Powerful IDE with Flutter plugin support.", image: "https://developer.android.com/static/studio/images/new-studio-logo-1_1920.png", link: "https://developer.android.com/studio" },
+    { name: "VS Code", description: "A lightweight IDE with excellent Flutter support.", image: "https://code.visualstudio.com/assets/favicon.ico", link: "https://code.visualstudio.com/" },
+    { name: "Firebase", description: "Backend services for Flutter apps including Auth, Database, and Storage.", image: "https://firebase.google.com/downloads/brand-guidelines/SVG/logo-vertical.svg", link: "https://firebase.google.com/" },
+    { name: "Codemagic", description: "CI/CD for Flutter apps to automate testing and deployment.", image: "https://codemagic.io/media/socials/codemagic-facebook.png", link: "https://codemagic.io/" },
+    { name: "FlutterFlow", description: "No-code UI builder for Flutter apps.", image: "data:image/png;base64,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", link: "https://flutterflow.io/" }
+];
+
+
+        const container = document.getElementById("tech-container");
+
+        flutterTools.forEach(tool => {
+            const card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = `
+                <img src="${tool.image}" alt="${tool.name}">
+                <h2>${tool.name}</h2>
+                <p>${tool.description}</p>
+                <a href="${tool.link}" target="_blank">Learn More</a>
+            `;
+            container.appendChild(card);
+        });
+
+        // Logout Functionality
+        document.getElementById("logout-btn").addEventListener("click", function () {
+            localStorage.removeItem("user");
+            window.location.href = "index.html"; // Redirect to login page
+        });
+    </script>
+
+</body>
+</html>
